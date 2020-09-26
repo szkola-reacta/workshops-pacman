@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { ReactComponent as GhostSvg } from './ghost.svg';
-
+import './style.css';
 class Ghost extends Component {
 
   state = {
@@ -14,6 +14,7 @@ class Ghost extends Component {
 
   render() {
     const { color } = this.props;
+    console.log('color:', color)
     return (
       <div style={this.state.position} className="ghost">
         <GhostSvg className={`ghost-${color}`} />
@@ -23,7 +24,7 @@ class Ghost extends Component {
 }
 
 Ghost.defaultProps = {
-  color: 'red',
+  color: 'pink',
   step: 50, // 50px
   size: 50, // ghost size: 50x50px
   // TODO: move to config
