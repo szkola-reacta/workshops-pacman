@@ -26,6 +26,7 @@ class Pacman extends Component {
 
     const currentTop = this.state.position.top;
     const currentLeft = this.state.position.left;
+    const { step } = this.props;
 
     // 39 ArrowRight
     // 40 ArrowDown
@@ -33,18 +34,34 @@ class Pacman extends Component {
     // 38 ArrowUp
     if (event.key === 'ArrowUp') {
       this.setState({
+        position: {
+          top: currentTop - step,
+          left: currentLeft
+        },
         direction: 'up'
       });
     } else if (event.key === 'ArrowRight') {
       this.setState({
+        position: {
+          top: currentTop,
+          left: currentLeft + step
+        },
         direction: 'right'
       });
     } else if (event.key === 'ArrowDown') {
       this.setState({
+        position: {
+          top: currentTop + step,
+          left: currentLeft
+        },
         direction: 'down'
       });
     } else if (event.key === 'ArrowLeft') {
       this.setState({
+        position: {
+          top: currentTop,
+          left: currentLeft - step
+        },
         direction: 'left'
       });
     }
