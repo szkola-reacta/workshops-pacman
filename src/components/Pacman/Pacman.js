@@ -22,8 +22,6 @@ class Pacman extends Component {
   }
 
   handleKeyDown = (event) => {
-    console.log(event.keyCode, event.key);
-
     const currentTop = this.state.position.top;
     const currentLeft = this.state.position.left;
     const { step, border, size, topScoreBoardHeight } = this.props;
